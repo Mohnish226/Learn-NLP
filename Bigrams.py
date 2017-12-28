@@ -28,9 +28,7 @@ print_ngram(bigrams)
 print("\nTrigrams")
 #Trigrams
 trigrams = nltk.trigrams(tokens)
-
-for item in trigrams:
-    print(item)
+print_ngram(trigrams)
     
 text2 = "If it is nice out, I will go to the beach."
 
@@ -41,5 +39,3 @@ print_ngram(bigrams2)
 
 fourgrams = ngrams(tokens2,4) 
 print_ngram(fourgrams)
-
-
