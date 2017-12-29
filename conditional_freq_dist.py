@@ -7,7 +7,6 @@ Created on Mon Dec 25 22:03:36 2017
 """
 
 #Conditional Frequency Distribution
-
 import nltk
 
 names = [("Group A","Paul"),("Group A","Mike"),("Group A","Katy"),
