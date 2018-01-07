@@ -12,6 +12,7 @@ di = open('data/dec-independence.txt')
 di_text = di.read()
 #print(di_text)
 
+#Data from text file 
 di_token = nltk.word_tokenize(di_text)
 
 di_fd = nltk.FreqDist(di_token)
