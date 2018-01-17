@@ -26,6 +26,30 @@ image = names_cfd.plot()
 def name_features(name):
     return{"pair" : name[-2:]}
     
-#print(name_features("katy"))
+print(name_features("katy"))
 
-name_list = [(names,'male')for name in names.words("male.txt")] + [(names,'female')for name in names.words("female.txt")]
+name_list = ([(name, 'male') for name in names.words('male.txt')] + [(name, "female") for name in names.words('female.txt')])
+
+print(name_list[:10])
+print(name_list[-10:])
+
+#Shuffle Data
+random.shuffle(name_list)
+print(name_list[:10])
+
+features = [(name_features(name), gender) for (name,gender) in name_list]
+print(features[:10])
+
+print(len(features)/2)
+training_set = features[:3972]
+testing_set = features[3972:]
+
+classifier = nltk.NaiveBayesClassifier.train(training_set)
+
+
+male_names = names.words('male.txt')
+"Carmello" in male_names
+
+classifier.classify(name_features("Carmello"))
+
+print(nltk.classify.accuracy(classifier, testing_set))
