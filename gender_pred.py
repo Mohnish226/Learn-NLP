@@ -48,8 +48,9 @@ classifier = nltk.NaiveBayesClassifier.train(training_set)
 
 
 male_names = names.words('male.txt')
-"Carmello" in male_names
 
-classifier.classify(name_features("Carmello"))
+print("Carmello" in male_names)
+
+print(classifier.classify(name_features("Carmello")))
 
 print(nltk.classify.accuracy(classifier, testing_set))
