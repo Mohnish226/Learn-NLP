@@ -16,6 +16,9 @@ html = ur.urlopen(url).read()
 
 # Beautiful Soup
 
+print("Org Data: \n")
+print(html)
+
 web_str = BeautifulSoup(html,"lxml").get_text()
 
 start = web_str.find("Automatic data summarization is part of machine learning and data mining.")
@@ -28,4 +31,5 @@ intro = web_str[start:end+last_sent]
 
 intro_token = nltk.word_tokenize(intro)
 
+print("\n\nData")
 print(intro_token)
